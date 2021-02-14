@@ -4,7 +4,7 @@ const Usuarios = (props) => {
     console.log(props.usuarios);
     return ( 
         <>
-            <h1>Listado de Usuarios</h1>
+            <h1>Listado de Usuarios - REST API</h1>
 
             <pre>
                 {JSON.stringify(props.usuarios)}
