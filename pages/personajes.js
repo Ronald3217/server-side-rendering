@@ -20,7 +20,7 @@ const Personajes = ({data}) => {
                 {
                     data.characters.results.map(personaje=>(
                         <li key={personaje.id} >
-                                <a href={`/personaje/${personaje.id}`}>{personaje.name} </a>
+                                {personaje.name}
                         </li>
                     ))
                 }
