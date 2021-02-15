@@ -13,6 +13,7 @@ const Personaje = (props) => {
   return (
     <div>
       {name}
+      <hr />
       {status}
     </div>
   );
