@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
 const client = new ApolloClient({
@@ -12,10 +13,15 @@ const Personajes = ({data}) => {
         <>
             <h1>Personajes Rick And Morty API - GraphQL</h1>
             <pre>{JSON.stringify(data.characters.results)} </pre>
+            <Link href='/' >
+            Ver personaje
+            </Link>
             <ul>
                 {
                     data.characters.results.map(personaje=>(
-                        <li key={personaje.id} ><span>{personaje.name}</span> - {personaje.status} </li>
+                        <li key={personaje.id} >
+                                <a href={`/personaje/${personaje.id}`}>{personaje.name} </a>
+                        </li>
                     ))
                 }
             </ul>
@@ -33,10 +39,6 @@ export async function getStaticProps(context) {
               results{
                 id
                 name
-                species
-                gender
-                status
-                image
               }
             }
           }
